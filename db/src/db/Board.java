@@ -16,9 +16,7 @@ public class Board
     //non-default constructor - [5 points]
     public Board(String filename)
     {
-    	 //set the file name
-       //if the board is valid then create the 3x3 grid
-       //and load the board from the file
+    	
     }
     
     //loads the grid with the file contents - [5 points]
@@ -36,7 +34,48 @@ public class Board
     //valid if it resembles a 3x3 board that contains only E, X, O
     public boolean isValidBoardFile()
     {
-    	
+    	try
+    	{
+    		File file = new File("src/tictactoe/" + this.filename);
+    		Scanner scanner = new Scanner(file);
+    		int xCount = 0, oCount = 0;
+    		while(scanner.hasNextLine())
+    		{
+    			String line = scanner.nextLine().trim();
+    			if(!line.matches("[EXO],[EXO],[EXO]"))
+    			{
+    				scanner.close();
+    				return false;
+    			}
+    			//count X and O
+    			if(line.charAt(4) == 'X') xCount++;
+    			if(line.charAt(4) == 'O') oCount++;
+    			if(line.charAt(2) == 'X') xCount++;
+    			if(line.charAt(2) == 'O') oCount++;
+    			if(line.charAt(0) == 'X') xCount++;
+    			if(line.charAt(0) == 'O') oCount++;
+    			if(line.charAt(4) == 'X') xCount++;
+    			if(line.charAt(4) == 'O') oCount++;
+    			if(line.charAt(2) == 'X') xCount++;
+    			if(line.charAt(2) == 'O') oCount++;
+    			if(line.charAt(0) == 'X') xCount++;
+    			if(line.charAt(0) == 'O') oCount++;
+    			if(line.charAt(4) == 'X') xCount++;
+    			if(line.charAt(4) == 'O') oCount++;
+    			if(line.charAt(2) == 'X') xCount++;
+    			if(line.charAt(2) == 'O') oCount++;
+    			if(line.charAt(0) == 'X') xCount++;
+    			if(line.charAt(0) == 'O') oCount++;
+
+    		}
+    		scanner.close();
+			return xCount == oCount || xCount == oCount + 1;
+    	}
+    	catch(Exception Error)
+    	{
+    		Error.printStackTrace();
+    		return false;
+    	}
     
     }
     
