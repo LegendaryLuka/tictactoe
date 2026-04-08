@@ -216,11 +216,18 @@ try {
     public void setCell(int row, int col, char player)
     {
     	grid[row][col] = player;
+    	this.saveBoardToFile();
     }
     
     public char[][] getGrid()
     {
     	return grid;
+    }
+    
+    public void setGrid(char[][] newGrid)
+    {
+    	this.grid = newGrid;
+    	this.saveBoardToFile();
     }
     
     
