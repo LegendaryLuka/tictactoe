@@ -217,6 +217,13 @@ try {
     {
     	grid[row][col] = player;
     }
+    
+    public char[][] getGrid()
+    {
+    	return grid;
+    }
+    
+    
     public static void main(String args[])
     {
     	Board b = new Board("board.csv");
