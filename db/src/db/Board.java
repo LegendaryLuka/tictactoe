@@ -213,7 +213,10 @@ try {
     	return grid[row][col];
     }
 
-    
+    public void setCell(int row, int col, char player)
+    {
+    	grid[row][col] = player;
+    }
     public static void main(String args[])
     {
     	Board b = new Board("board.csv");
