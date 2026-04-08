@@ -16,7 +16,8 @@ public class Board
     //non-default constructor - [5 points]
     public Board(String filename)
     {
-    	
+    	this.filename = filename;
+    	this.grid = new char[3][3];
     }
     
     //loads the grid with the file contents - [5 points]
@@ -27,7 +28,27 @@ public class Board
         //and populate the grid with the board values
         //remember to close the scanner afterwards 
         //use isValidBoard method as a guide
-    	
+    	 try
+    	    {
+    	        File file = new File("src/tictactoe/" + this.filename);
+    	        Scanner scanner = new Scanner(file);
+    	        int row = 0;
+    	        while(scanner.hasNextLine())
+    	        {
+    	            String line = scanner.nextLine().trim();
+    	            String[] values = line.split(",");
+    	            for(int col = 0; col < values.length; col++)
+    	            {
+    	                grid[row][col] = values[col].charAt(0);
+    	            }
+    	            row++;
+    	        }
+    	        scanner.close();
+    	    }
+    	    catch(Exception error)
+    	    {
+    	        error.printStackTrace();
+    	    }
     }
 
     
