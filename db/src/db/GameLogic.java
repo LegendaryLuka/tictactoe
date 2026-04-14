@@ -25,8 +25,8 @@ public class GameLogic
 		if(grid[2][0] == player && grid[1][1] == player && grid [0][2] == player)
 			return true;
 		
-		return false;
-		}
+	return false;
+	}
 	
 	public boolean isDraw(Board board)
 	{
@@ -44,6 +44,11 @@ public class GameLogic
 		
 		
 	}
+	public boolean isGameOver(Board board)
+	{
+		return checkWin(board, 'X') || checkWin(board, 'O') || isDraw(board);
+	}
+	
 	}
 
 
