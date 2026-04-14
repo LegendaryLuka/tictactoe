@@ -18,6 +18,12 @@ public class GameLogic
 				return true;
 		}
 		
+		//diagonal
+		if(grid[0][0] == player && grid[1][1] == player && grid [2][2] == player)
+			return true;
+
+		if(grid[2][0] == player && grid[1][1] == player && grid [0][2] == player)
+			return true;
 		}
 	}
 
