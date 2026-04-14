@@ -24,7 +24,26 @@ public class GameLogic
 
 		if(grid[2][0] == player && grid[1][1] == player && grid [0][2] == player)
 			return true;
+		
+		return false;
 		}
+	
+	public boolean isDraw(Board board)
+	{
+		char[][] grid = board.getGrid();
+		
+		for(int row = 0; row < 3; row++)
+		{
+			for(int col = 0; col < 3; col++)
+			{
+				if (grid[row][col] == 'E')
+					return false;
+			}
+		}
+		return true;
+		
+		
+	}
 	}
 
 
