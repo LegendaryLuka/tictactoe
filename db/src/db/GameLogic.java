@@ -11,7 +11,12 @@ public class GameLogic
 			if(grid[row][0] == player && grid[row][1] == player && grid[row][2] == player)
 				return true;
 		}
-				
+		
+		for(int col = 0; col < 3; col++)
+		{
+			if(grid[col][0] == player && grid[col][1] == player && grid[col][2] == player)
+				return true;
+		}
 		
 		}
 	}
