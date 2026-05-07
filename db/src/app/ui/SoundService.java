@@ -76,8 +76,6 @@ public final class SoundService {
     }
 
     public void playDraw() {
-        if (settings.isSoundEnabled()) {
-            Toolkit.getDefaultToolkit().beep();
-        }
+        playSoundFile("res/sounds/draw.wav");
     }
 }

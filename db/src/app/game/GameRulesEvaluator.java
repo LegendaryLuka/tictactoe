@@ -64,10 +64,10 @@ public final class GameRulesEvaluator {
                 grid[row][col] = board[row][col];
             }
         }
-        if (gameLogic.checkWin(legacyBoard, 'X')) {
+        if (gameLogic.getWinIndices(legacyBoard, 'X') != null) {
             return new Result('X', false, true, findWinningCells(board, 3, 'X'));
         }
-        if (gameLogic.checkWin(legacyBoard, 'O')) {
+        if (gameLogic.getWinIndices(legacyBoard, 'O') != null) {
             return new Result('O', false, true, findWinningCells(board, 3, 'O'));
         }
         boolean draw = gameLogic.isDraw(legacyBoard);

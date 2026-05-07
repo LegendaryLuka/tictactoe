@@ -68,10 +68,12 @@ public final class AdvancedTicTacToeFrame extends JFrame implements AdvancedGame
                 confettiPanel.stop();
             }
             if (state.isGameOver()) {
-                soundService.playWin();
-                playWinningAnimation(state);
                 if (state.getWinner() != null) {
+                    soundService.playWin();
                     confettiPanel.start();
+                    playWinningAnimation(state);
+                } else {
+                    soundService.playDraw();
                 }
             } else {
                 boolean isEmpty = true;
@@ -240,7 +242,6 @@ public final class AdvancedTicTacToeFrame extends JFrame implements AdvancedGame
         if (state.isGameOver()) {
             if (state.getWinner() == null) {
                 statusLabel.setText("Draw");
-                soundService.playDraw();
             } else {
                 statusLabel.setText("Winner: " + state.getWinner());
             }
